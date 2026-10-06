@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #07060b;
+  --color-ink-900: #0b0912;
+  --color-ink-850: #100d1a;
+  --color-ink-800: #151021;
+  --color-ink-700: #1d1730;
+  --color-ink-600: #2a2140;
+
+  --color-gold-200: #f6e9c8;
+  --color-gold-300: #ecd9a6;
+  --color-gold-400: #dcc07c;
+  --color-gold-500: #c7a25a;
+  --color-gold-600: #a3813f;
+
+  --color-plum-400: #8d6a9e;
+  --color-plum-500: #6d4a7c;
+
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink-950);
+  color: var(--color-gold-200);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-gold-500);
+  color: var(--color-ink-950);
+}
+
+.glow-gold {
+  background: radial-gradient(
+    circle at center,
+    rgb(199 162 90 / 0.28) 0%,
+    rgb(199 162 90 / 0) 70%
+  );
+}
+
+.glow-plum {
+  background: radial-gradient(
+    circle at center,
+    rgb(109 74 124 / 0.32) 0%,
+    rgb(109 74 124 / 0) 70%
+  );
+}
+
+.hairline {
+  border-color: rgb(220 192 124 / 0.18);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(100deg, #f6e9c8 0%, #dcc07c 45%, #a3813f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-hover {
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgb(220 192 124 / 0.45);
+  box-shadow: 0 24px 60px -30px rgb(0 0 0 / 0.9);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card-hover {
+    transition: none;
+  }
+}
